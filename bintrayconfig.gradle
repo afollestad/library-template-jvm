@@ -44,8 +44,8 @@ publish {
   groupId = "com.afollestad"
   artifactId = moduleId
   publishVersion = versions.publishVersion
-  desc = "A coroutine-powered state machine library for Kotlin."
-  website = "https://github.com/afollestad/state-machine"
+  desc = "A library template for Kotlin/JVM!"
+  website = "https://github.com/afollestad/library-template-jvm"
   dryRun = false
 }
 
