@@ -21,6 +21,6 @@ import org.junit.Test
 class ExampleUnitTest {
 
   @Test fun example() {
-    assertThat("hello").isNotEqualTo()
+    assertThat("hello").isNotEqualTo("hi")
   }
 }
