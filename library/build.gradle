@@ -7,15 +7,15 @@ ext.artifactId = "librarytemplate-jvm"
 apply from: "../bintrayconfig.gradle"
 
 afterEvaluate {
-  if (modulePackageId != null && modulePackageId != '') {
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-      kotlinOptions {
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+      if (modulePackageId != null && modulePackageId != '') {
         freeCompilerArgs += ['-module-name', modulePackageId]
-        jvmTarget = '1.8'
+      } else {
+        logger.warn('Skipping setting compiler module name, no package to use.')
       }
+      jvmTarget = '1.8'
     }
-  } else {
-    logger.warn('Skipping setting compiler module name, no package to use.')
   }
 }
 
