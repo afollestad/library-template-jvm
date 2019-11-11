@@ -23,14 +23,15 @@ Settings can be tweaked for this plugin within [versionsPlugin.gradle](versionsP
 Just have to execute:
 
 ```gradle
-./gradlew clean build bintrayUpload
+./gradlew clean build uploadArchives --no-parallel --no-daemon
 ```
 
 But there are some pre-requisites:
 
-1. Update [bintrayconfig.gradle](bintrayconfig.gradle) to contain your own Bintray username and 
-the new library's matching details.
-2. Add `bintray.user` and `bintray.apikey` entries to `local.properties` matching your own 
-Bintray account.
-3. With each release, update the version name and code in [dependencies.gradle](dependencies.gradle).
-4. Once you've deployed to Bintray for the first time, you can link your Bintray repository to jCenter so people can depend on your library _without_ having to add any special repositories.
+1. Update the root [gradle.properties](gradle.properties) and the [gradle.properties](library/gradle.properties) for each 
+publishable library module. 
+2. Add `bintray.user` and `bintray.apikey` entries to `local.properties` matching the Bintray 
+account that owns the repo being published to.
+3. With each release, update the library version in the root [gradle.properties](gradle.properties). 
+4. Once you've deployed to Bintray for the first time, you can link your Bintray repository to jCenter so people can 
+depend on your library _without_ having to add any special repositories.
