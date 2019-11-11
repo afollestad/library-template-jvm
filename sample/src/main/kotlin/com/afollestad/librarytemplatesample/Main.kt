@@ -16,13 +16,13 @@
 package com.afollestad.statemachinesample
 
 import com.afollestad.librarytemplate.StuffDoer
+import java.util.Scanner
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-import java.util.Scanner
 
 @FlowPreview
 @ExperimentalCoroutinesApi

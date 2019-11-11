@@ -20,13 +20,13 @@ afterEvaluate {
 }
 
 dependencies {
-  api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}"
-  api "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+  api deps.kotlin.coroutines.core
+  implementation deps.kotlin.stdlib8
 
-  testImplementation "junit:junit:${versions.junit}"
-  testImplementation "org.mockito:mockito-core:${versions.mockito}"
-  testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockitoKotlin}"
-  testImplementation "com.google.truth:truth:${versions.truth}"
+  testImplementation deps.kotlin.test.mockito
+  testImplementation deps.test.junit
+  testImplementation deps.test.mockito
+  testImplementation deps.test.truth
 }
 
 apply from: "../spotless.gradle"
