@@ -35,8 +35,13 @@ private def getBintrayRepositoryUrl() {
 }
 
 private def getUserAndApiKey() {
+  def localPropertiesFile = project.rootProject.file('local.properties')
+  if (!localPropertiesFile.exists()) {
+    logger.warn("local.properties file doesn't exist, can't get bintray crednetials.")
+    return ["", ""]
+  }
   Properties properties = new Properties()
-  properties.load(project.rootProject.file('local.properties').newDataInputStream())
+  properties.load(localPropertiesFile.newDataInputStream())
   return [
       properties.getProperty("bintray.user"),
       properties.getProperty("bintray.apikey")
