@@ -1,22 +1,11 @@
 apply plugin: "java-library"
 apply plugin: "kotlin"
-apply from: "../dependencies.gradle"
+apply from: rootProject.file("dependencies.gradle")
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 apply from: rootProject.file('configure-maven-publish.gradle')
-
-afterEvaluate {
-  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
-    kotlinOptions {
-      if (POM_ARTIFACT_ID != null && POM_ARTIFACT_ID != '') {
-        freeCompilerArgs += ['-module-name', POM_ARTIFACT_ID]
-      }
-      jvmTarget = '1.8'
-    }
-  }
-}
 
 dependencies {
   api deps.kotlin.coroutines.core
@@ -28,4 +17,4 @@ dependencies {
   testImplementation deps.test.truth
 }
 
-apply from: "../spotless.gradle"
+apply from: rootProject.file("spotless_plugin_config.gradle")

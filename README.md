@@ -8,7 +8,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ./gradlew spotlessApply
 ```
 
-*Make sure you update [spotless.license.kt](spotless.license.kt) and [LICENSE.md](LICENSE.md) to reflect your own license and author info!* Other settings for this plugin can be tweaked in [spotless.gradle](spotless.gradle).
+*Make sure you update [spotless.license.kt](spotless.license.kt) and [LICENSE.md](LICENSE.md) to reflect your own license and author info!* Other settings for this plugin can be tweaked in [spotless.gradle](spotless_plugin_config.gradle).
 
 ### Check if Dependencies Are Up-to-Date
 
@@ -16,7 +16,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ./gradlew dependencyUpdates
 ```
 
-Settings can be tweaked for this plugin within [versionsPlugin.gradle](versionsPlugin.gradle).
+Settings can be tweaked for this plugin within [versionsPlugin.gradle](versions_plugin_config.gradle).
 
 ### Publishing the Library to Bintray -> jCenter
 

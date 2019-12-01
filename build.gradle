@@ -1,14 +1,14 @@
-apply from: "./dependencies.gradle"
-apply from: "./versionsPlugin.gradle"
+apply from: rootProject.file("versions_plugin_config.gradle")
 
 buildscript {
-  apply from: "./dependencies.gradle"
+  apply from: rootProject.file("dependencies.gradle")
 
   repositories {
     google()
     jcenter()
     mavenCentral()
   }
+
   dependencies {
     classpath deps.gradle_plugins.android
     classpath deps.gradle_plugins.kotlin
@@ -22,5 +22,13 @@ allprojects {
   repositories {
     google()
     jcenter()
+  }
+}
+
+subprojects {
+  tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    kotlinOptions {
+      freeCompilerArgs += ['-module-name', project.path.replace('/', '.')]
+    }
   }
 }
