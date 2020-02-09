@@ -8,7 +8,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ./gradlew spotlessApply
 ```
 
-*Make sure you update [spotless.license.kt](spotless.license.kt) and [LICENSE.md](LICENSE.md) to reflect your own license and author info!* Other settings for this plugin can be tweaked in [spotless.gradle](spotless_plugin_config.gradle).
+*Make sure you update [spotless.license.kt](spotless.license.kt) and [LICENSE.md](LICENSE.md) to reflect your own license and author info!* Other settings for this plugin can be tweaked in [spotless_plugin_config.gradle](spotless_plugin_config.gradle).
 
 ### Check if Dependencies Are Up-to-Date
 
@@ -16,7 +16,7 @@ This repository can be used as a template to create new GitHub repositories for 
 ./gradlew dependencyUpdates
 ```
 
-Settings can be tweaked for this plugin within [versionsPlugin.gradle](versions_plugin_config.gradle).
+Settings can be tweaked for this plugin within [versions_plugin_config.gradle](versions_plugin_config.gradle).
 
 ### Publishing the Library to Bintray -> jCenter
 
@@ -28,7 +28,7 @@ Just have to execute:
 
 But there are some pre-requisites:
 
-1. Update the root [gradle.properties](gradle.properties) and the [gradle.properties](library/gradle.properties) for each 
+1. Update the root [gradle.properties](gradle.properties) and [library/gradle.properties](library/gradle.properties) for each 
 publishable library module. 
 2. Add `bintray.user` and `bintray.apikey` entries to `local.properties` matching the Bintray 
 account that owns the repo being published to.
